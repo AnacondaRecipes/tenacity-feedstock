@@ -36,7 +36,7 @@ test:
 
 about:
   home: http://github.com/jd/tenacity
-  license: Apache 2.0
+  license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
   summary: 'Retry a flaky function whenever an exception occurs until it works'

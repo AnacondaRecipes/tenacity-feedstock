@@ -12,8 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: "{{ PYTHON }} -m pip install -vv ."
+  number: 1
+  skip: True  # [py<36]
+  script: {{ PYTHON }} -m pip install -vv .
 
 requirements:
   host:
@@ -35,7 +36,7 @@ test:
     - pip check
 
 about:
-  home: http://github.com/jd/tenacity
+  home: https://github.com/jd/tenacity
   license: Apache-2.0
   license_file: LICENSE
   license_family: Apache
@@ -44,8 +45,8 @@ about:
   description: |
     Tenacity is general-purpose retrying library, written in Python, to simplify the task of
     adding retry behavior to just about anything. It originates from a fork of Retrying
-  doc_url: http://tenacity.readthedocs.io
-  dev_url: http://github.com/jd/tenacity
+  doc_url: https://tenacity.readthedocs.io
+  dev_url: https://github.com/jd/tenacity
 
 extra:
   recipe-maintainers:

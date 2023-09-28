@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<36]
   script: {{ PYTHON }} -m pip install -vv --no-deps --no-build-isolation .
 
@@ -22,8 +22,8 @@ requirements:
     - toml
     - wheel
     - python
-    - setuptools 66.0
-    - setuptools_scm 7.0
+    - setuptools
+    - setuptools_scm
   run:
     - python
 

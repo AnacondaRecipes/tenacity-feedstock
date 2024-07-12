@@ -28,12 +28,18 @@ requirements:
     - python
 
 test:
+  source_files:
+    - tests
   imports:
     - tenacity
   requires:
     - pip
+    - pytest
+    - tornado
+    - typeguard
   commands:
     - pip check
+    - pytest tests
 
 about:
   home: https://github.com/jd/tenacity

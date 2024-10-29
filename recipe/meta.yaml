@@ -1,15 +1,13 @@
 {% set name = "tenacity" %}
-{% set version = "8.2.3" %}
-{% set sha256 = "5398ef0d78e63f40007c1fb4c0bff96e1911394d2fa8d194f77619c05ff6cc8a" %}
+{% set version = "9.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 807f37ca97d62aa361264d497b0e31e92b8027044942bfa756160d908320d73b
 
 build:
   number: 0

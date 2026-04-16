@@ -1,5 +1,5 @@
 {% set name = "tenacity" %}
-{% set version = "9.1.2" %}
+{% set version = "9.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb
-  patches:
-    # Add asyncio support for Python 3.14,
-    # see https://github.com/jd/tenacity/pull/528
-    - 528.patch
+  sha256: adb31d4c263f2bd041081ab33b498309a57c77f9acf2db65aadf0898179cf93a
 
 build:
-  number: 1
-  skip: true  # [py<39]
+  number: 0
+  skip: True  # [py<310]
   script: {{ PYTHON }} -m pip install -vv --no-deps --no-build-isolation .
 
 requirements:

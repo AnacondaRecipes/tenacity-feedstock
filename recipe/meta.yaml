@@ -2,7 +2,7 @@
 {% set version = "9.2.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -16,10 +16,8 @@ build:
 
 requirements:
   host:
-    - pip
-    - toml
     - python
-    - setuptools_scm >=3.4
+    - pip
     - hatchling
     - hatch-vcs
   run:
@@ -37,7 +35,7 @@ test:
     - typeguard
   commands:
     - pip check
-    - pytest tests
+    - pytest -vv tests
 
 about:
   home: https://github.com/jd/tenacity

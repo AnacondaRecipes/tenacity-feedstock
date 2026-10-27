@@ -1,27 +1,25 @@
 {% set name = "tenacity" %}
-{% set version = "9.1.4" %}
+{% set version = "9.2.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: adb31d4c263f2bd041081ab33b498309a57c77f9acf2db65aadf0898179cf93a
+  sha256: a606b5c808d0cded4a359d5b9932d867ff2a6a6b64d37350260fd01bbdf83839
 
 build:
   number: 0
-  skip: True  # [py<310]
+  skip: true  # [py<310]
   script: {{ PYTHON }} -m pip install -vv --no-deps --no-build-isolation .
 
 requirements:
   host:
-    - pip
-    - toml
-    - wheel
     - python
-    - setuptools >=21.0.0,!=24.0.0,!=34.0.0,!=34.0.1,!=34.0.2,!=34.0.3,!=34.1.0,!=34.1.1,!=34.2.0,!=34.3.0,!=34.3.1,!=34.3.2,!=36.2.0
-    - setuptools_scm >=3.4
+    - pip
+    - hatchling
+    - hatch-vcs
   run:
     - python
 
@@ -33,11 +31,11 @@ test:
   requires:
     - pip
     - pytest
-    - tornado >=4.5
+    - tornado >=6.0
     - typeguard
   commands:
     - pip check
-    - pytest tests
+    - pytest -vv tests
 
 about:
   home: https://github.com/jd/tenacity

@@ -31,7 +31,7 @@ test:
   requires:
     - pip
     - pytest
-    - tornado >=4.5
+    - tornado >=6.0
     - typeguard
   commands:
     - pip check
